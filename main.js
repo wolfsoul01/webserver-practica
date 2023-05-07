@@ -11,6 +11,6 @@ const server = http.createServer((req,res)=>{
 
 const PORT= 8080;
 server.listen(PORT);
-console.log('Server listo en el localhost://8080');
+console.log('Server listo en el http://localhost:8080/');
 
 
