@@ -1,18 +1,16 @@
-import express from 'express';
-
+const express = require('express');
 const app = express();
 const PORT=8080;
-app.get('/',(req,res)=>{
 
-    res.send('Hola mundo desde express');
-});
+app.use(express.static('public'));
+
 
 app.get('/api',(req,res)=>{
     res.send('Aqui va la api perro ');
 })
 
 app.get('*',(req,res)=>{
-    res.send('404 | Page not Found ;')
+    res.sendFile(  __dirname+'/public/404.html');
 })
 
 
