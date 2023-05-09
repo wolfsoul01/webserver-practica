@@ -1,8 +1,15 @@
 const express = require('express');
+const  hbs = require('hbs');
+
 const app = express();
 const PORT=8080;
 
+
+
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/partials',  (err)=> {
+    console.log(err);
+});
 
 app.use(express.static('public'));
 
@@ -13,6 +20,7 @@ app.get('/',(req,res)=>{
         titulo:'Curso Node '
     })
 });
+
 app.get('/elements',(req,res)=>{
     res.sendFile(__dirname+'/public/elements.html');
 });
