@@ -20,6 +20,18 @@ app.get('/',(req,res)=>{
         titulo:'Curso Node '
     })
 });
+app.get('/generic',(req,res)=>{
+    res.render('generic',{
+        nombre:'WolfSoul',
+        titulo:'Curso Node '
+    })
+});
+app.get('/elements',(req,res)=>{
+    res.render('elements',{
+        nombre:'WolfSoul',
+        titulo:'Curso Node '
+    })
+});
 
 app.get('/elements',(req,res)=>{
     res.sendFile(__dirname+'/public/elements.html');
